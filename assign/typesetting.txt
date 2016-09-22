@@ -1,0 +1,77 @@
+Problem Title: Typesetting
+
+Accepted Languages:
+
+- C++, Java, Python 2.7 and 3.4
+
+Submission:
+
+- Submit a single file containing your solution to the problem. It should
+output only the answer requested (NO DEBUG OUTPUT).
+
+Grading:
+
+20% - Code Quality
+40% - Big O (efficiency)
+40% - Correctness
+
+Description:
+
+Billy is a typesetter at a major magazine. He finds that he spends a lot of time on one task in particular: choosing font sizes for blocks of text. Can you help him automate this process?
+
+The correct font size for a given message in a given text box size is the largest font size that can be used for that message without overflowing the box. Billy doesn't care about readability, so he uses character-level wrapping (that is, not word wrapping). For example, the word "programming" might be split across multiple lines as "progr\amming", where the backslash represents a newline.
+
+A font is given as an integer "height coefficient" and a mapping from characters to integer "font coefficients". The height coefficient H describes how tall characters in this font are: the height (in pixels) of any character when rendered at font size S is H*S. Similarly, the font coefficients F_i describe the width of characters (the font is not necessarily monospace). The width (in pixels) of a character K_i at font size S is F_i*S.
+
+Given a font description, a message, and a box size, find the largest integer font size in which the message can be rendered while fitting in the box.
+
+Rules:
+
+The first line of input contains a single integer T, the number of test cases. T test cases follow.
+
+Each test case begins with a desription of the font. The first line contains C and H, the number of distinct characters in the font and the height coefficient of the font respectively. Each of the following C lines describes one of the characters in the font. The ith such line contains a character K_i, followed by a space, followed by an integer F_i. The next line contains X and Y, the width and height (respectively) of the text box in pixels. The last line of the test case contains a string M, the message to be displayed in the text box.
+
+Output:
+
+For each test case, output a single line containing a single integer. This integer should be the maximum font size in which the message can be rendered and fit in the box. If the message cannot fit in the box at any positive font size, print 0. The answer is guaranteed to be at most 10^9.
+
+Constraints:
+
+1 <= T <= 25
+1 <= C <= 127
+1 <= H <= 1000
+K_i is an ASCII printable character, excluding space and delete (see http://www.ascii-code.com/)
+1 <= F_i <= 1000
+1 <= X <= 10^6
+1 <= Y <= 10^6
+1 <= |M| <= 10^5
+M contains only characters that were given as a K_i (that is, every character has a corresponding font coefficient)
+
+Input (read from standard in):
+2
+2 5
+A 5
+_ 3
+20 30
+AA___A
+2 10
+A 11
+_ 3
+10 30
+AA___A
+
+Output (print to standard out):
+2
+0
+
+Explanation:
+
+In the first test case, the message fits as follows with font size 2:
+
+AA
+___
+A
+
+The message does not fit with any font size larger than 2.
+
+In the second test case, the message does not fit in the box at any positive font size.
