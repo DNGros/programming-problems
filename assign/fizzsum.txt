@@ -1,0 +1,52 @@
+Problem Title: FizzSum
+
+Accepted Languages:
+
+- C++, Java, Python 2.7 or 3.4
+
+Submission:
+
+- Submit a single file containing your solution to the problem. It should
+  output only the answer requested (NO DEBUG OUTPUT).
+
+Grading:
+
+20% - Code Quality
+40% - Big O (efficiency)
+40% - Correctness
+
+Description:
+
+Did you know that one of the most common interview questions is Fizz buzz
+(https://en.wikipedia.org/wiki/Fizz_buzz)? This question typically acts as a
+weed out question to determine which interviewees know basic programming. We
+changed it up a bit, so this is our variant of Fizz buzz for competitive
+programming! ...will you be weeded out?
+
+Rules:
+
+You're going to be given several pairs of integers a and b. For every x between
+a and b (both inclusive) do the following:
+
+1. If x is divisible by 3, add x + 3
+2. If x is divisible by 5, add x + 5
+3. If x is divisible by 3 and 5, add x^2
+
+If rule 3 applies, don't perform rules 1 and 2.
+
+After all integers have been added, print the sum on its own line.
+
+Constraints:
+1 <= a <= b <= 10^6
+
+Input (read from standard in):
+
+1 5
+13 17
+12 17
+
+Output (write to standard out):
+
+16
+225
+240
